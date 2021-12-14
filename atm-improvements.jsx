@@ -53,16 +53,23 @@ const Account = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div
+        className="vh-100 w-100 pt-5"
+        style={{ backgroundColor: "#7e8987", marginTop: 0 }}
+        >
+    <form 
+        onSubmit={handleSubmit}  
+        className="mx-auto w-75 card text-center p-3"
+        style={{
+          maxWidth: 600,
+          minWidth: 400,
+          maxHeight: 300,
+          minHeight: 200,
+          borderRadius: 8,
+          backgroundColor: "#c2cfb2",
+        }}
+    >
     <>
-    <div>
-      <nav class="navbar navbar-dark bg-primary">
-        <div class="container-fluid">
-        <span class="navbar-brand mb-3 h1">Automated Teller Machine</span>
-       </div>
-      </nav>
-
-      <div className="container-md">
         <h2 id="total">{status}</h2>
         <label>Select an action below to continue</label>
       <select onChange={(e) => handleModeSelect(e)} name="mode" id="mode-select"class="form-select form-select-md mb-3" aria-label=".form-select-lg example">
@@ -81,11 +88,12 @@ const Account = () => {
           isValid={validTransaction}
         ></ATMDeposit>
       )}
-      </div>
-    </div>
+      
+    
+  
     </>
   </form>
-   
+  </div>
   );
 };
 // ========================================
